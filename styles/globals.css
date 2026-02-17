@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --coconut-white: #f7f4ef;
+  --warm-sand: #e9e1d6;
+  --palm-charcoal: #121212;
+  --champagne-gold: #c5a059;
+  --ocean-teal: #00d4c7;
+  --sunset-coral: #ff4d2e;
+  --radius-xl: 24px;
+  --gap-tight: 16px;
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-jakarta);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--coconut-white);
+  color: var(--palm-charcoal);
+  font-family: var(--font-body), system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/media/grain.png');
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 2;
+}
+
+main {
+  position: relative;
+  z-index: 3;
+}
+
+.section-shell {
+  @apply mx-auto max-w-7xl px-4 py-14 md:px-8 md:py-20;
+}
+
+.bento-card {
+  @apply rounded-[24px] border border-[#C5A059]/30 bg-[#E9E1D6]/70 p-6 backdrop-blur;
+}
+
+.editorial {
+  font-family: var(--font-display), serif;
+  letter-spacing: -0.03em;
+}
+
+.cta-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-coral px-6 py-3 text-sm font-semibold text-white transition hover:scale-[1.02] hover:bg-[#e5462a];
+}
+
+.cta-ghost {
+  @apply inline-flex items-center justify-center rounded-full border border-charcoal/40 px-6 py-3 text-sm font-semibold transition hover:border-teal hover:text-teal;
+}
+
+.widget-title {
+  @apply text-xs uppercase tracking-[0.2em] text-charcoal/60;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
